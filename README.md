@@ -4,7 +4,7 @@
 
 为直播设计的Minecraft mod, 隐藏聊天框输入 /login 等命令时后面的密码
 
-Minecraft mod for streamers, hide the password after the /login command in the chat box
+Minecraft mod for streamers, hide password after the /login command in the chat box
 
 ### Dependency
 
