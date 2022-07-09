@@ -1,38 +1,22 @@
 package sakura.kooi.minecraftforge.hidepassword;
 
+import java.util.Arrays;
+
 public class Hidepassword {
     public static String getBeginWithSecretCommand(String chatText) {
-        if (chatText.startsWith("/login ")) {
-            return "/login ";
-        }
-        if (chatText.startsWith("/l ")) {
-            return "/l ";
-        }
-        if (chatText.startsWith("/register ")) {
-            return "/register ";
-        }
-        if (chatText.startsWith("/reg ")) {
-            return "/reg ";
-        }
-        if (chatText.startsWith("/r ")) {
-            return "/r ";
-        }
-        if (chatText.startsWith(".login ")) {
-            return ".login ";
-        }
-        if (chatText.startsWith(".l ")) {
-            return ".l ";
-        }
-        if (chatText.startsWith(".register ")) {
-            return ".register ";
-        }
-        if (chatText.startsWith(".reg ")) {
-            return ".reg ";
-        }
-        if (chatText.startsWith(".r ")) {
-            return ".r ";
-        }
-        return null;
+        String[] commands = new String[] {
+                "/login ",
+                "/l ",
+                "/register ",
+                "/reg ",
+                "/r ",
+                ".login ",
+                ".l ",
+                ".register ",
+                ".reg ",
+                ".r "
+        };
+        return Arrays.stream(commands).filter(chatText::startsWith).findFirst().orElse(null);
     }
 
     public static String replaceChatText(String chatText) {
